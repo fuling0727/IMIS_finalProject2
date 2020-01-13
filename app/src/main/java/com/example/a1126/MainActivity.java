@@ -20,6 +20,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,13 +49,12 @@ public class MainActivity extends AppCompatActivity {
     private Button confirmButton;
     private Button ChangeSTTButton;
     private TextView resultText;
-    private ImageButton body_btn;
-    private ImageButton lefthand_btn;
-    private ImageButton righthand_btn;
-    private ImageButton head_btn;
-    private ImageButton face_btn;
-    private ImageButton feet_btn;
-
+    private Button body_btn;
+    private Button lefthand_btn;
+    private Button righthand_btn;
+    private Button head_btn;
+    private Button face_btn;
+    private Button feet_btn;
 
     TextView textResult;
     ImageButton record;
@@ -126,7 +126,9 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener bEventHead = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, Head_Page.class);
+            startActivity(intent);
         }
     };
     private View.OnClickListener bEventFace = new View.OnClickListener() {
@@ -426,31 +428,31 @@ public class MainActivity extends AppCompatActivity {
                 String[] convert = s.split("\u0000");   //切除亂碼
                 Log.d(TAG,convert[0]);
                 resultText.setText(convert[0]);
-                if(resultText.equals("頭"))
+                if(resultText.getText().toString().equals("頭") || resultText.getText().toString().equals("可以"))
                 {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, Head_Page.class);
                     startActivity(intent);
                 }
-                else if(resultText.equals("手"))
+                else if(resultText.getText().toString().equals("手"))
                 {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, HandFeet_Page.class);
                     startActivity(intent);
                 }
-                else if(resultText.equals("腳"))
+                else if(resultText.getText().toString().equals("腳") || resultText.getText().toString().equals("元") || resultText.getText().toString().equals("腳骨"))
                 {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, HandFeet_Page.class);
                     startActivity(intent);
                 }
-                else if(resultText.equals("臉"))
+                else if(resultText.getText().toString().equals("面") || resultText.getText().toString().equals("嘴") || resultText.getText().toString().equals("牙齒"))
                 {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, Face_Page.class);
                     startActivity(intent);
                 }
-                else if(resultText.equals("身"))
+                else if(resultText.getText().toString().equals("身") || resultText.getText().toString().equals("肚子") || resultText.getText().toString().equals("胸部") || resultText.getText().toString().equals("心臟"))
                 {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, Body_Page.class);

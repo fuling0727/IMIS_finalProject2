@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
+        <Button
             android:id="@+id/head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,9 +26,12 @@
             android:adjustViewBounds="true"
             android:maxWidth="100dp"
             android:maxHeight="45dp"
-            app:srcCompat="@drawable/head" />
+            android:text="頭"
+            android:textSize="20sp"
+            android:textColor="@color/White"
+            android:background="@drawable/head" />
 
-        <ImageButton
+        <Button
             android:id="@+id/face"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,7 +39,10 @@
             android:adjustViewBounds="true"
             android:maxWidth="100dp"
             android:maxHeight="56dp"
-            app:srcCompat="@drawable/face" />
+            android:text="面\n"
+            android:textSize="20sp"
+            android:textColor="@color/White"
+            android:background="@drawable/face" />
 
         <LinearLayout
             android:layout_width="218dp"
@@ -44,7 +50,7 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <ImageButton
+            <Button
                 android:id="@+id/righthand"
                 android:layout_width="55dp"
                 android:layout_height="match_parent"
@@ -52,34 +58,46 @@
                 android:adjustViewBounds="true"
                 android:maxWidth="68dp"
                 android:maxHeight="150dp"
-                app:srcCompat="@drawable/righthand" />
+                android:text="手"
+                android:textSize="20sp"
+                android:textColor="@color/White"
+                android:background="@drawable/righthand" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/body"
                 android:layout_width="108dp"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
+                android:background="@drawable/body"
                 android:maxWidth="100dp"
-                app:srcCompat="@drawable/body" />
+                android:text="軀幹"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/lefthand"
                 android:layout_width="55dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
                 android:maxWidth="68dp"
                 android:maxHeight="150dp"
-                app:srcCompat="@drawable/lefthand" />
+                android:text="手"
+                android:textSize="20sp"
+                android:textColor="@color/White"
+                android:background="@drawable/lefthand" />
         </LinearLayout>
 
-        <ImageButton
+        <Button
             android:id="@+id/feet"
             android:layout_width="108dp"
             android:layout_height="193dp"
             android:layout_gravity="center_horizontal"
             android:maxWidth="50dp"
             android:maxHeight="100dp"
-            app:srcCompat="@drawable/feet" />
+            android:text="腳        腳"
+            android:textSize="20sp"
+            android:textColor="@color/White"
+            android:background="@drawable/feet" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -142,13 +160,13 @@
 
     <TextView
         android:id="@+id/resultText"
-        android:layout_width="wrap_content"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="200dp"
-        android:text="TextView"
+        android:text="請點選右邊按鈕進行台語輸入"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView"
@@ -156,22 +174,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.1" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="61dp"
-        android:text="確認"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_record"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

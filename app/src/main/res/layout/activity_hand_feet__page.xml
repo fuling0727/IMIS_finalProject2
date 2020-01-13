@@ -5,29 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HandFeet_Page">
+
     <LinearLayout
-        android:layout_width="409dp"
+        android:layout_width="350dp"
         android:layout_height="729dp"
-        android:orientation="vertical"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/body_text"
-            android:layout_width="match_parent"
+            android:layout_width="316dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="90dp"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="36dp"
-            android:textSize="30sp"
-            android:text="部位:四肢" />
+            android:text="部位:四肢"
+            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,9 +96,11 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:gravity="fill_vertical"
             android:orientation="horizontal">
 
             <Button
@@ -107,45 +108,58 @@
                 android:layout_width="80dp"
                 android:layout_height="75dp"
                 android:layout_weight="1"
-                android:textSize="20sp"
                 android:backgroundTint="#ADD8E6"
-                android:textColor="@color/White"
                 android:shadowColor="#483D8B"
                 android:shadowDx="20"
                 android:shadowDy="10"
-                android:textStyle="bold"
-                android:text="手指疼痛無法張開" />
+                android:text="手指疼痛無法張開"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <Button
                 android:id="@+id/button6"
                 android:layout_width="80dp"
                 android:layout_height="75dp"
                 android:layout_weight="1"
-                android:textSize="20sp"
                 android:backgroundTint="#ADD8E6"
-                android:textColor="@color/White"
                 android:shadowColor="#483D8B"
                 android:shadowDx="20"
                 android:shadowDy="10"
-                android:textStyle="bold"
-                android:text="早上時關節疼痛" />
+                android:text="早上時關節疼痛"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="350dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center_horizontal"
-            android:text="TextView" />
+            android:layout_height="100dp"
+            android:textSize="15sp"
+            android:layout_gravity="center_horizontal" />
+
         <Button
             android:id="@+id/button7"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/outside"
+            android:text="返回"
             android:textColor="#3CB371"
-            android:textStyle="bold"
             android:textSize="18sp"
-            android:text="返回" />
+            android:textStyle="bold" />
+        <ImageButton
+            android:id="@+id/btn_record"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="145dp"
+            android:layout_marginStart="130dp"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/mic" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

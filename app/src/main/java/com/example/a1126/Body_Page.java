@@ -1,25 +1,63 @@
 package com.example.a1126;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.MediaRecorder;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.nio.charset.Charset;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class Body_Page extends AppCompatActivity {
+    private boolean busy;
     private Button btn1,btn2,btn3,btn4,btn5,btn6,back_btn;
     private TextView result_txt;
+    private TextView resultText;
+    TextView textResult;
+    ImageButton record;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_body__page);
         initUI();
+
         setListener();
     }
     private void initUI(){
+        busy = false;
+        textResult = findViewById(R.id.textView);
+        record = findViewById(R.id.btn_record);
+        resultText = findViewById(R.id.resultText);
         btn1 = findViewById(R.id.button1);
         btn2 = findViewById(R.id.button2);
         btn3 = findViewById(R.id.button3);
@@ -80,4 +118,5 @@ public class Body_Page extends AppCompatActivity {
             Body_Page.this.finish();
         }
     };
+
 }
